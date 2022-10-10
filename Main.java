@@ -9,6 +9,8 @@ Description: Plan a picnic
 
 import java.util.Scanner;
 
+import jdk.javadoc.internal.doclets.formats.html.SourceToHTMLConverter;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -23,80 +25,86 @@ public class Main {
         System.out.println("1) " + choices[0]);
         System.out.println("2) " + choices[1]);
         System.out.println("3) " + choices[2]);
-        int input1 = sc.nextInt();
-        int input2 = 0;
-        int input3 = 0;
-        int input4 = 0;
+        int choiceInput = sc.nextInt();
+        int locationInput = 0;
+        int timeInput = 0;
+        int foodInput = 0;
 
-        if (input1 == 1) {
+        if (choiceInput == 1) {
             
             System.out.println("\nWhere should the picnic be?");
             System.out.println("1) " + locations[0]);
             System.out.println("2) " + locations[1]);
             System.out.println("3) " + locations[2]);
-            input2 = sc.nextInt() - 1;
+            locationInput = sc.nextInt() - 1;
         } else {
-            input2 = (int) (Math.random() * 3);
+            locationInput = (int) (Math.random() * 3);
         }
         // beach -- dolphin
         // forest -- bears
         // park -- birds
         
-        if (input1 == 2) {
+        if (choiceInput == 2) {
             
             System.out.println("\nWhen should the picnic be?");
             System.out.println("1) " + times[0]);
             System.out.println("2) " + times[1]);
             System.out.println("3) " + times[2]);
-            input3 = sc.nextInt() - 1;
+            timeInput = sc.nextInt() - 1;
         } else {
-            input3 = (int) (Math.random() * 3);
+            timeInput = (int) (Math.random() * 3);
         }
         // morning -- sunrise
         // afternoon -- nothing
         // evening -- sunset
 
-        if (input1 == 3) {
+        if (choiceInput == 3) {
             
             System.out.println("\nWhat food should be at the picnic?");
             System.out.println("1) " + foods[0]);
             System.out.println("2) " + foods[1]);
             System.out.println("3) " + foods[2]);
-            input4 = sc.nextInt() - 1;
+            foodInput = sc.nextInt() - 1;
+            
         } else {
-            input4 = (int) (Math.random() * 3);
+            foodInput = (int) (Math.random() * 3);
         }
 
         //
-        System.out.println(locations[input2]);
-        System.out.println(times[input3]);
-        System.out.println(foods[input4]);
+        System.out.println(locations[locationInput]);
+        System.out.println(times[timeInput]);
+        System.out.println(foods[foodInput]);
 
         
         // Selected beach
-        if (input2 == 0){
-            if (input3 == 0){
-                System.out.println("1");
+        if (locationInput == 1){
+            if (timeInput == 0){
+                System.out.println("You went on a picnic at the beach in the morning." +
+                                    "\nYou and your friends feasted on " + foods[foodInput] + " as you watched dolphins jump through the crystal clear waters.");
             }
-            else if (input3 == 1){
+            else if (timeInput == 1){
                 System.out.println("2");
             }
             else {
-                System.out.println("3");
+                System.out.println("You went on a picnic at the beach in the evening." +
+                                    "\nYou and your friends feasted on "  + foods[foodInput] + " as you watched dolphins jump through the water in front of the setting sun.");
             }
         } 
 
         // Selected forest
-        else if (input2 == 1){
-            if (input3 == 2 && input4 == 0) {
+        else if (locationInput == 2){
+            if (timeInput == 2 && foodInput == 0) {
                 // special case: bear attack
+                System.out.println("You went on a picnic in the forest in the evening." +
+                                    "\nYou brought " + foods[foodInput] + " for food which attracted a bear!");
             }
             else {
-                if (input3 == 0){
-                    System.out.println(1);
+                if (timeInput == 0){
+                    System.out.println("You went on a picnic in the forest in the morning" + 
+                    "\nYou and your friends had " + foods[foodInput] + " and enjoy the beautiful sunrise.");
                 }
-                else if (input3 == 1){
-                    System.out.println(2);
+                else if (timeInput == 1){
+                    System.out.println();
                 }
                 else {
 
@@ -106,18 +114,23 @@ public class Main {
         
         // Selected park
         else {
-            if (input3 == 0 && input4 != 0) {
+            if (timeInput == 0 && foodInput != 0) {
                 // special case: bird attack
+                System.out.println("You went on a picnic at the park in the morning." + 
+                                    "\nYou brought " + foods[foodInput] +  " which attracted a flock of birds!");
             }
             else {
-                if (input3 == 0){
-                    System.out.println(1);
+                if (timeInput == 0){
+                    System.out.println("You went on a picnic in the forest, during the evening." +
+                                        "\nYou brought " + foods[foodInput] + " for food which attracted a bear!");
                 }
-                else if (input3 == 1){
-                    System.out.println(2);
+                else if (timeInput == 1){
+                    System.out.println("You went on a picnic at the park in the afternoon." + 
+                                        "\nYou and your friends feasted on " + foods[foodInput] + " as you watched a colony of rabbits hop across the park.");
                 }
                 else {
-
+                    System.out.println("You went on a picnic at the park in the evening."  + 
+                                        "\nYou and your friends feasted on @ + foods[foodsInput] + @ as you watched a flock of birds fly across the setting sun.");
                 }
             }
             
