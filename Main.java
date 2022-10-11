@@ -90,6 +90,7 @@ public class Main {
                 System.out.println("You went on a picnic at the beach in the evening." +
                                     "\nYou and your friends feasted on "  + foods[foodInput] + " as you watched dolphins jump through the water in front of the setting sun.");
             }
+            // Invalid input
             else {
                 System.out.println("Invalid input.");
             }
@@ -98,7 +99,7 @@ public class Main {
         // Selected forest
         else if (locationInput == 1){
             if (timeInput == 2 && foodInput == 0){
-                // special case: bear attack
+                // Special case: Bear attack
                 System.out.println("You went on a picnic in the forest in the evening." +
                                     "\nYou brought " + foods[foodInput] + " for food which attracted a bear!");
                 
@@ -121,6 +122,7 @@ public class Main {
                     System.out.println("\nYou walk up to the bear and slap it with your " + foods[foodInput] + ", aggrevating the bear. " + 
                                         "\nYour friends talk you into your senses, and the bear chases you as you run away.");
                 }
+                // Invalid input
                 else {
                     System.out.println("Invalid input.");
                 }
@@ -138,6 +140,7 @@ public class Main {
                     System.out.println("You went on a picnic in the forest in the evening" + 
                     "\nYou and your freinds had " + foods[foodInput] + " and enjoyed the beautiful sunset");
                 }
+                // Invalid input
                 else {
                     System.out.println("Invalid input.");
                 }
@@ -147,7 +150,7 @@ public class Main {
         // Selected park
         else if (locationInput == 2) {
             if (timeInput == 0 && foodInput != 0) {
-                // special case: bird attack
+                // Special case: Bird attack
                 System.out.println("You went on a picnic at the park in the morning." + 
                                     "\nYou brought " + foods[foodInput] +  " which attracted a flock of birds!");
                 
@@ -170,6 +173,7 @@ public class Main {
                     System.out.println("As the birds swoop down, you and your friends throw your " + 
                                         foods[foodInput] + " at the birds and watch as they fall from the sky.");
                 }
+                // Invalid input
                 else {
                     System.out.println("Invalid input.");
                 }
@@ -187,6 +191,7 @@ public class Main {
                     System.out.println("You went on a picnic at the park in the evening."  + 
                                         "\nYou and your friends feasted on " + foods[foodInput] + " as you watched a flock of birds fly across the setting sun.");
                 }
+                // Invalid input
                 else {
                     System.out.println("Invalid input.");
                 }
